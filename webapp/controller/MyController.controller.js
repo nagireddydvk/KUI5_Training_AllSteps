@@ -5,7 +5,7 @@ sap.ui.define([
     "use strict";
     return Controller.extend("MyController", {
         onInit: function () {
-            console.log("onInit reached");
+            alert("onInit reached");
             var oData = {
                 field1: "",
                 field2: ""
@@ -19,13 +19,13 @@ sap.ui.define([
             alert("Values: " + input1 + ", " + input2 );
         },
         onBeforeRendering: function(){
-            console.log("onBeforeRendering reached");
+            alert("onBeforeRendering reached");
         },
         onAfterRendering: function(){
-            console.log("onAfterRendering reached");
+            alert("onAfterRendering reached");
         },
         onExit: function(){
-            console.log("onExit reached");
+            alert("onExit reached");
         }
     });
 });
