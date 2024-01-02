@@ -37,7 +37,7 @@
     },
     "sap.ui5": {
         "rootView": {
-            "viewName": "MyApp.view.App",
+            "viewName": "MyApp.view.MyView",
             "type": "XML",
             "async": true
         },
