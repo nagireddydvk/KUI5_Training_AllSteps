@@ -3,7 +3,7 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel"
 ], function (Controller, JSONModel) {
     "use strict";
-    return Controller.extend("MyController", {
+    return Controller.extend("MyApp.controller.MyController", {
         onInit: function () {
             var oData = {
                 field1: 2,
@@ -40,6 +40,12 @@ sap.ui.define([
             let data = model.getData();
             data.output = output;
             model.setData(data);
+        },
+        gotoPO: function(){
+            const POView = sap.ui.xmlview({
+                viewName: "MyApp.view.POs"
+            });
+            
         }
     });
 });

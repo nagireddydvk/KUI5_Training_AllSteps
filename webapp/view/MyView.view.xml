@@ -19,5 +19,6 @@
 			</f:content>
 		</f:SimpleForm>
         <Button text="{i18n>calculate}" press=".calculate"/>		
+		<Button text="{i18n>gotoPO}" press=".gotoPO"/>	
     </VBox>
 </mvc:View>
