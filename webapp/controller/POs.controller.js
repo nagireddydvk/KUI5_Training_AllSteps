@@ -4,7 +4,9 @@ sap.ui.define([
 ], function (Controller, JSONModel) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
-        onInit: function () {
+        goBack: function(){
+            const router = this.getOwnerComponent().getRouter();
+            router.navTo("Home");            
         }
     });
 });

@@ -43,8 +43,7 @@ sap.ui.define([
         },
         gotoPO: function(){
             const router = this.getOwnerComponent().getRouter();
-            router.navTo("PurchaseOrder");
-            
+            router.navTo("PurchaseOrder");            
         }
     });
 });
