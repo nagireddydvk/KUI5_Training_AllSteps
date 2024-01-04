@@ -40,12 +40,6 @@ sap.ui.define([
             let data = model.getData();
             data.output = output;
             model.setData(data);
-        },
-        gotoPO: function(){
-            const POView = sap.ui.xmlview({
-                viewName: "MyApp.view.POs"
-            });
-            
         }
     });
 });
