@@ -42,9 +42,8 @@ sap.ui.define([
             model.setData(data);
         },
         gotoPO: function(){
-            const POView = sap.ui.xmlview({
-                viewName: "MyApp.view.POs"
-            });
+            const router = this.getOwnerComponent().getRouter();
+            router.navTo("PurchaseOrder");
             
         }
     });
