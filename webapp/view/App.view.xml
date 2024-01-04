@@ -1,6 +1,5 @@
-<mvc:View controllerName="bsctmplte.frombasictmplte.controller.App"
+<mvc:View controllerName="MyApp.controller.App"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <App id="app">
-    </App>
+    <App id="app"/>
 </mvc:View>

@@ -38,9 +38,29 @@
     "sap.ui5": {
         "rootView": {
             "viewName": "MyApp.view.App",
-            "type": "XML",
-            "async": true
+            "type": "XML"
         },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "MyApp.view",
+                "controlId": "app",
+                "controlAggregation": "pages"
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Home",
+                    "target": "home"
+                }               
+            ],
+            "targets": {
+                "home": {
+                    "viewName": "MyView"
+                }               
+            }
+        },     
         "dependencies": {
             "minUI5Version": "1.71.0",
             "libs": {
@@ -50,8 +70,7 @@
         },
         "models": {
             "": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/data.json"
+                "type": "sap.ui.model.json.JSONModel"
             },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
