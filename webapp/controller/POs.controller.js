@@ -6,7 +6,9 @@ sap.ui.define([
     return Controller.extend("MyApp.controller.POs", {
         onItemPress: function(){
             const router = this.getOwnerComponent().getRouter();
-            router.navTo("PurchaseOrder");            
+            router.navTo("PurchaseOrder", {
+                poNumber: "1"
+            });            
         }
     });
 });
