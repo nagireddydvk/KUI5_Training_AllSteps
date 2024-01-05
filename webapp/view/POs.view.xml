@@ -3,12 +3,27 @@
     controllerName="MyApp.controller.POs"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form"
 >
-    <VBox>
-        <Button
-            text="{i18n>goback}"
-            press=".goBack"
-        />
-    </VBox>
+    <Table id="purchaseOrdersTable" items="{/myPOs}">
+        <columns>
+            <Column>
+                <Text text="PO Number" />
+            </Column>
+            <Column>
+                <Text text="Description" />
+            </Column>
+            <Column>
+                <Text text="Total Amount" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{poNumber}" />
+                    <Text text="{description}" />
+                    <Text text="{totalAmount}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
 </mvc:View>

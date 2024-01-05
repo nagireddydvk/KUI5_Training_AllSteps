@@ -53,20 +53,12 @@
                     "pattern": "",
                     "name": "Home",
                     "target": "home"
-                },
-                {
-                    "pattern": "po",
-                    "name": "PurchaseOrder",
-                    "target": "PO"
-                }                
+                }              
             ],
             "targets": {
                 "home": {
-                    "viewName": "MyView"
-                },
-                "PO": {
                     "viewName": "POs"
-                }                
+                }               
             }
         },     
         "dependencies": {

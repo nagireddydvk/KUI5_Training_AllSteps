@@ -1,6 +1,7 @@
 # ui5-training
 
-- Added a table control in the root view
+- Change default route point to POs
+- Added a table control to POs View
 - Do aggregation binding to the table control
 - JSON data moved to a separate file
 
