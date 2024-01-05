@@ -1,24 +1,27 @@
-<mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
-		<Table id="purchaseOrdersTable" items="{/myPOs}">
-			<columns>
-				<Column>
-					<Text text="PO Number" />
-				</Column>
-				<Column>
-					<Text text="Description" />
-				</Column>
-				<Column>
-					<Text text="Total Amount" />
-				</Column>
-			</columns>
-			<items>
-				<ColumnListItem>
-					<cells>
-						<Text text="{poNumber}" /> 
-						<Text text="{description}" /> 
-						<Text text="{totalAmount}" /> 
-					</cells>
-				</ColumnListItem>
-			</items>
-		</Table>
+<mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <VBox>
+		<f:SimpleForm
+			layout="ResponsiveGridLayout"
+			title="Demo" >
+			<f:content>
+				<Label text="{i18n>firstValue}" />
+				<Input id="value1" value="{/field1}" />
+				<Label text="{i18n>secondValue}" />
+				<Input id="value2" value="{/field2}" />
+				<Label text="Operator" />
+				<Select selectedKey="{/operator}" items="{/possibleOperations}" >
+					<items>
+						<core:Item key="{id}" text="{value}"/>
+					</items>
+				</Select>				
+				<Label text="{i18n>answer}" />
+				<Text text="{/output}"/>
+			</f:content>
+		</f:SimpleForm>
+		<HBox>
+			<Button text="{i18n>calculate}" press=".calculate"/>		
+			<Button text="{i18n>gotoPO}" press=".gotoPO"/>	
+		</HBox>
+
+    </VBox>
 </mvc:View>

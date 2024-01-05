@@ -4,9 +4,9 @@ sap.ui.define([
 ], function (Controller, JSONModel) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
-        onItemPress: function(){
+        gotoPO: function(){
             const router = this.getOwnerComponent().getRouter();
-            router.navTo("PurchaseOrder");            
+            router.navTo("Home");            
         }
     });
 });

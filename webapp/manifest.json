@@ -55,17 +55,17 @@
                     "target": "home"
                 },
                 {
-                    "pattern": "po",
+                    "pattern": "poInfo",
                     "name": "PurchaseOrder",
                     "target": "PO"
                 }                
             ],
             "targets": {
                 "home": {
-                    "viewName": "MyView"
+                    "viewName": "POs"
                 },
                 "PO": {
-                    "viewName": "POs"
+                    "viewName": "PODetail"
                 }                
             }
         },     

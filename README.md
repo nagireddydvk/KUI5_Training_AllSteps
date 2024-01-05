@@ -1,6 +1,6 @@
 # ui5-training
 
-- Added a table control in the root view
-- Do aggregation binding to the table control
-- JSON data moved to a separate file
-
+- ColumnListItem has active=true
+- ColumnListItem has press event handler
+- In the handler, navigate to detail page
+- In the detail page navigate back to master page
