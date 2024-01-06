@@ -1,24 +1,33 @@
-<mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.POs" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
-    <Table id="purchaseOrdersTable" items="{/myPOs}">
-        <columns>
-            <Column>
-                <Text text="PO Number" />
-            </Column>
-            <Column>
-                <Text text="Description" />
-            </Column>
-            <Column>
-                <Text text="Total Amount" />
-            </Column>
-        </columns>
-        <items>
-            <ColumnListItem type="Active" press="onItemPress">
-                <cells>
-                    <Text text="{poNumber}" /> 
-                    <Text text="{description}" /> 
-                    <Text text="{totalAmount}" /> 
-                </cells>
-            </ColumnListItem>
-        </items>
-    </Table>
+<mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.POs" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout">
+    <Page showHeader="false">
+        <l:VerticalLayout >
+            <ObjectHeader title="Purchase Orders" >
+                <attributes>
+                    <ObjectAttribute text="Total POs: {/myPOs/length}" />
+                </attributes>
+            </ObjectHeader>
+        <Table id="purchaseOrdersTable" items="{/myPOs}">
+            <columns>
+                <Column>
+                    <Text text="PO Number" />
+                </Column>
+                <Column>
+                    <Text text="Description" />
+                </Column>
+                <Column>
+                    <Text text="Total Amount" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active" press="onItemPress">
+                    <cells>
+                        <Text text="{poNumber}" /> 
+                        <Text text="{description}" /> 
+                        <Text text="{totalAmount}" /> 
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </l:VerticalLayout>
+</Page>
 </mvc:View>

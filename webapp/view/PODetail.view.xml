@@ -5,11 +5,11 @@
 			title="Demo" >
 			<f:content>
 				<Label text="{i18n>poNumber}" />
-				<Text id="value1" text="{/field1}" />
+				<Text id="value1" text="{poNumber}" />
 				<Label text="{i18n>description}" />
-				<Text id="value2" text="{/field2}" />
+				<Text id="value2" text="{description}" />
 				<Label text="{i18n>amount}" />
-				<Text text="{/output}"/>
+				<Text text="{totalAmount}"/>
 			</f:content>
 		</f:SimpleForm>
 		<HBox>		

@@ -55,7 +55,7 @@
                     "target": "home"
                 },
                 {
-                    "pattern": "poInfo/{poNumber}",
+                    "pattern": "poInfo/{rowNumber}",
                     "name": "PurchaseOrder",
                     "target": "PO"
                 }                
