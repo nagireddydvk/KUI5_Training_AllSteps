@@ -23,7 +23,10 @@
                     <cells>
                         <Text text="{poNumber}" /> 
                         <Text text="{description}" /> 
-                        <Text text="{totalAmount}" /> 
+                        <!-- <Text text="{totalAmount} {currency}"/> -->
+                        <!-- <Input value="{totalAmount}"/> -->
+                        <Input value="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}"/>
+                        <!-- <Text text="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}" />  -->
                     </cells>
                 </ColumnListItem>
             </items>

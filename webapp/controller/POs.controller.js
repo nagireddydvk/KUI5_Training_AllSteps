@@ -1,8 +1,10 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "sap/ui/core/mvc/Controller",
+    "MyApp/model/util"    
+], function (Controller, util) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
+        formatter: util,
         onItemPress: function(oEvent){
             //Get instance of the selected row
             const source = oEvent.getSource();

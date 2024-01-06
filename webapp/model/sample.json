@@ -9,7 +9,8 @@
             "createdBy": "User1",
             "lastModifiedDate": "2017-01-01",
             "lastModifiedBy": "User1",
-            "totalAmount": 1000
+            "totalAmount": 1000,
+            "currency": "USD"
         },
         {
             "poNumber": 2,
@@ -20,7 +21,8 @@
             "createdBy": "User1",
             "lastModifiedDate": "2017-01-01",
             "lastModifiedBy": "User1",
-            "totalAmount": 2000
+            "totalAmount": 2000,
+            "currency": "CAD"            
         },
         {
             "poNumber": 3,
@@ -31,7 +33,8 @@
             "createdBy": "User1",
             "lastModifiedDate": "2017-01-01",
             "lastModifiedBy": "User1",
-            "totalAmount": 3000
+            "totalAmount": 3000,
+            "currency": "USD"            
         }
     ]
 }
