@@ -14,6 +14,9 @@ sap.ui.define([
             router.navTo("PurchaseOrder", {
                 rowNumber: rowNumberClicked
             });            
+        },
+        showDetailsInPopup: async function(){
+            const fragmentContent = this.loadfragment({});
         }
     });
 });

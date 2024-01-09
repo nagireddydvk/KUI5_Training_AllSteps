@@ -17,16 +17,18 @@
                 <Column>
                     <Text text="Total Amount" />
                 </Column>
+                <Column>
+                    <Text text="View"/>
+                </Column>
             </columns>
             <items>
                 <ColumnListItem type="Active" press="onItemPress">
                     <cells>
                         <Text text="{poNumber}" /> 
                         <Text text="{description}" /> 
-                        <!-- <Text text="{totalAmount} {currency}"/> -->
-                        <!-- <Input value="{totalAmount}"/> -->
                         <Input value="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}"/>
-                        <!-- <Text text="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}" />  -->
+                        <Text text="{totalAmount}" /> 
+                        <Button text="View" press="showDetailsInPopup"/>
                     </cells>
                 </ColumnListItem>
             </items>

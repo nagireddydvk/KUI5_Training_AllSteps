@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox>
+		<f:SimpleForm
+			layout="ResponsiveGridLayout"
+			title="Demo" >
+			<f:content>
+				<Label text="{i18n>poNumber}" />
+				<Text id="value1" text="{poNumber}" />
+				<Label text="{i18n>description}" />
+				<Text id="value2" text="{description}" />
+				<Label text="{i18n>amount}" />
+				<Input value="{totalAmount}"/>
+				<Label text="{i18n>high?}" />
+				<Text text="{= ${totalAmount} > 2000 ? 'High' : 'Low' " />			
+				<Label text="One More" />
+				<Text text="{= ${totalAmount} + 1}" />	
+			</f:content>
+		</f:SimpleForm>
+		<HBox>		
+			<Button text="{i18n>gotoPO}" press=".gotoPO"/>	
+		</HBox>
+    </VBox>    
+</core:FragmentDefinition>
