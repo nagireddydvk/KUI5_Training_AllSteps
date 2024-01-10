@@ -27,7 +27,6 @@
                         <Text text="{poNumber}" /> 
                         <Text text="{description}" /> 
                         <Input value="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}"/>
-                        <Text text="{totalAmount}" /> 
                         <Button text="View" press="showDetailsInPopup"/>
                     </cells>
                 </ColumnListItem>

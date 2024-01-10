@@ -1,24 +1,8 @@
 <mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.PODetail" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-    <VBox>
-		<f:SimpleForm
-			layout="ResponsiveGridLayout"
-			title="Demo" >
-			<f:content>
-				<Label text="{i18n>poNumber}" />
-				<Text id="value1" text="{poNumber}" />
-				<Label text="{i18n>description}" />
-				<Text id="value2" text="{description}" />
-				<Label text="{i18n>amount}" />
-				<!-- <Text text="{totalAmount}"/> -->
-				<Input value="{totalAmount}"/>
-				<Label text="{i18n>high?}" />
-				<Text text="{= ${totalAmount} > 2000 ? 'High' : 'Low' " />			
-				<Label text="One More" />
-				<Text text="{= ${totalAmount} + 1}" />	
-			</f:content>
-		</f:SimpleForm>
+	<VBox >
+		<core:Fragment fragmentName="MyApp.view.fragments.poDetail" type="XML"/>
 		<HBox>		
 			<Button text="{i18n>gotoPO}" press=".gotoPO"/>	
-		</HBox>
-    </VBox>
+		</HBox>		
+	</VBox>
 </mvc:View>

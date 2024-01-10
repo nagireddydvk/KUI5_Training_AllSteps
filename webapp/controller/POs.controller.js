@@ -1,7 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "MyApp/model/util"    
-], function (Controller, util) {
+    "MyApp/model/util",
+    "sap/m/Dialog",
+    "sap/ui/core/Fragment"
+], function (Controller, util, Dialog, Fragment) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
         formatter: util,
@@ -15,8 +17,28 @@ sap.ui.define([
                 rowNumber: rowNumberClicked
             });            
         },
-        showDetailsInPopup: async function(){
-            const fragmentContent = this.loadfragment({});
+        showDetailsInPopup: async function(oEvent){
+            let sBindingPath = "/myPOs/" + oEvent.getSource().getParent().getBindingContext().getPath().split("/")[2];
+            
+            const fragmentContent = await Fragment.load({
+                "name": "MyApp.view.fragments.poDetail",
+                "type": "XML"
+            });
+
+            const oDialog = new Dialog({
+                title: "PO Detail",
+                content: fragmentContent,
+                afterClose: function(){
+                    this.destroy();
+                }
+            });
+
+            this.getView().addDependent(oDialog);
+
+            oDialog.open();
+
+            
+            oDialog.bindElement(sBindingPath);
         }
     });
 });
