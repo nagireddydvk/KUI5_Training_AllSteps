@@ -6,7 +6,7 @@
                     <ObjectAttribute text="Total POs: {/myPOs/length}" />
                 </attributes>
             </ObjectHeader>
-        <Table id="purchaseOrdersTable" items="{/myPOs}">
+        <Table id="purchaseOrdersTable" items="{/C_PurchaseRequisitionValueHelp}">
             <columns>
                 <Column>
                     <Text text="PO Number" />
@@ -24,9 +24,9 @@
             <items>
                 <ColumnListItem type="Active" press="onItemPress">
                     <cells>
-                        <Text text="{poNumber}" /> 
-                        <Text text="{description}" /> 
-                        <Input value="{ path: 'totalAmount', formatter: '.formatter.toTwoDecimals'}"/>
+                        <Text text="{PurchaseRequisition}" /> 
+                        <Text text="{PurchaseRequisitionItemText}" /> 
+                        <Text text="{PurchasingGroup}" /> 
                         <Button text="View" press="showDetailsInPopup"/>
                     </cells>
                 </ColumnListItem>

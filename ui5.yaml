@@ -8,12 +8,16 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false
+        backend:
+        - path: /sap/opu
+          destination: SBX
         ui5:
           path:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
           version: 1.71.61
+          directLoad: true
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

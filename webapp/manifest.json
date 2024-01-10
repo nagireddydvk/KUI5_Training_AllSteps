@@ -13,6 +13,15 @@
             "id": "@sap/ux-app-migrator:freestyle",
             "version": "1.12.1",
             "toolsId": "940e1875-98fb-4031-98f4-3ecfc3558bcf"
+        },
+        "dataSources": {
+            "POService": {
+                "uri": "/sap/opu/odata/sap/MM_PUR_POITEMS_MONI_SRV",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
         }
     },
     "sap.ui": {
@@ -78,8 +87,7 @@
         },
         "models": {
             "": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/sample.json"
+                "dataSource": "POService"
             },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
