@@ -11,14 +11,16 @@ sap.ui.define([
             //Get instance of the selected row
             const source = oEvent.getSource();
             const router = this.getOwnerComponent().getRouter();
-            const context = source.getBindingContext().getPath();
-            const rowNumberClicked = context.split("/")[2];
+            const oData = source.getBindingContext().getProperty();
+            const poNumber = oData.PurchaseRequisition;
+            const itemNumber = oData.PurchaseRequisitionItem;
             router.navTo("PurchaseOrder", {
-                rowNumber: rowNumberClicked
+                PONumber: poNumber,
+                itemNo: itemNumber
             });            
         },
         showDetailsInPopup: async function(oEvent){
-            let sBindingPath = "/myPOs/" + oEvent.getSource().getParent().getBindingContext().getPath().split("/")[2];
+            let oBindingContext = oEvent.getSource().getParent().getBindingContext();
             
             const fragmentContent = await Fragment.load({
                 "name": "MyApp.view.fragments.poDetail",
@@ -35,10 +37,8 @@ sap.ui.define([
 
             this.getView().addDependent(oDialog);
 
-            oDialog.open();
-
-            
-            oDialog.bindElement(sBindingPath);
+            oDialog.open();            
+            oDialog.setBindingContext(oBindingContext);
         }
     });
 });

@@ -12,9 +12,14 @@ sap.ui.define([
         },
 
         _onRouteMatched: function(oEvent){
-            const rowNumber = oEvent.getParameter("arguments").rowNumber;
-            const bindingPath = "/myPOs/" + rowNumber;
-            this.getView().bindElement(bindingPath);
+            const PONumber = oEvent.getParameter("arguments").PONumber;
+            const itemNo = oEvent.getParameter("arguments").itemNo;
+            const oModel = this.getView().getModel();
+            const sPath = oModel.createKey("/C_PurchaseRequisitionValueHelp", {
+                "PurchaseRequisition": PONumber,
+                "PurchaseRequisitionItem": itemNo
+            });
+            this.getView().bindElement(sPath);
         },
 
         gotoPO: function(){

@@ -15,7 +15,7 @@
                     <Text text="Description" />
                 </Column>
                 <Column>
-                    <Text text="Total Amount" />
+                    <Text text="PurchasingGroup" />
                 </Column>
                 <Column>
                     <Text text="View"/>

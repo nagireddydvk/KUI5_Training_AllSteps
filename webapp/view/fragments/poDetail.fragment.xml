@@ -4,15 +4,11 @@
 			title="Demo" >
 			<f:content>
 				<Label text="{i18n>poNumber}" />
-				<Text text="{poNumber}" />
+				<Text text="{PurchaseRequisition}" />
 				<Label text="{i18n>description}" />
-				<Text text="{description}" />
-				<Label text="{i18n>amount}" />
-				<Input value="{totalAmount}"/>
-				<Label text="{i18n>high?}" />
-				<Text text="{= ${totalAmount} > 2000 ? 'High' : 'Low' " />			
-				<Label text="One More" />
-				<Text text="{= ${totalAmount} + 1}" />	
+				<Text text="{PurchaseRequisitionItemText}" />
+				<Label text="{i18n>PurchasingGroup}" />
+				<Text text="{PurchasingGroup}"/>
 			</f:content>
 		</f:SimpleForm>  
 </core:FragmentDefinition>
