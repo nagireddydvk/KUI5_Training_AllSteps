@@ -74,7 +74,8 @@
                     "viewName": "POs"
                 },
                 "PO": {
-                    "viewName": "PODetail"
+                    "viewName": "PODetail",
+                    "transition": "flip"
                 }                
             }
         },     
