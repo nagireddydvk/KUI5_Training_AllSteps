@@ -13,11 +13,9 @@ sap.ui.define([
 
         _onRouteMatched: function(oEvent){
             const PONumber = oEvent.getParameter("arguments").PONumber;
-            const itemNo = oEvent.getParameter("arguments").itemNo;
             const oModel = this.getView().getModel();
-            const sPath = oModel.createKey("/C_PurchaseRequisitionValueHelp", {
-                "PurchaseRequisition": PONumber,
-                "PurchaseRequisitionItem": itemNo
+            const sPath = oModel.createKey("/POs", {
+                "ID": PONumber
             });
             this.getView().bindElement(sPath);
         },

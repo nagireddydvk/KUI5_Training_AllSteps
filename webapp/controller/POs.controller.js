@@ -12,11 +12,9 @@ sap.ui.define([
             const source = oEvent.getSource();
             const router = this.getOwnerComponent().getRouter();
             const oData = source.getBindingContext().getProperty();
-            const poNumber = oData.PurchaseRequisition;
-            const itemNumber = oData.PurchaseRequisitionItem;
+            const poNumber = oData.ID;
             router.navTo("PurchaseOrder", {
-                PONumber: poNumber,
-                itemNo: itemNumber
+                PONumber: poNumber
             });            
         },
         showDetailsInPopup: async function(oEvent){

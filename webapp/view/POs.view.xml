@@ -1,33 +1,36 @@
 <mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.POs" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:l="sap.ui.layout">
-    <Page showHeader="false">
-        <l:VerticalLayout >
-            <ObjectHeader title="Purchase Orders" >
+    <Page id="_IDGenPage1" showHeader="false">
+        <l:VerticalLayout id="_IDGenVerticalLayout1" >
+            <ObjectHeader id="_IDGenObjectHeader1" title="Purchase Orders" >
                 <attributes>
-                    <ObjectAttribute text="Total POs: {/myPOs/length}" />
+                    <ObjectAttribute id="_IDGenObjectAttribute1" text="Total POs: {/myPOs/length}" />
                 </attributes>
             </ObjectHeader>
-        <Table id="purchaseOrdersTable" items="{/C_PurchaseRequisitionValueHelp}">
+        <Table id="purchaseOrdersTable" items="{/POs}">
+            <headerToolbar>
+                <OverflowToolbar id="_IDGenOverflowToolbar1">
+                    <Title text="Purchase Orders" level="H2"/>
+                    <ToolbarSpacer />
+                    <Button id="_IDGenButton1" text="New" press="onCreate"></Button>
+                </OverflowToolbar>
+            </headerToolbar>
             <columns>
-                <Column>
-                    <Text text="PO Number" />
+                <Column id="_IDGenColumn1">
+                    <Text id="_IDGenText1" text="PO Number" />
                 </Column>
-                <Column>
-                    <Text text="Description" />
+                <Column id="_IDGenColumn2">
+                    <Text id="_IDGenText2" text="Description" />
                 </Column>
-                <Column>
-                    <Text text="PurchasingGroup" />
-                </Column>
-                <Column>
-                    <Text text="View"/>
+                <Column id="_IDGenColumn3">
+                    <Text id="_IDGenText3" text="PurchasingGroup" />
                 </Column>
             </columns>
             <items>
-                <ColumnListItem type="Active" press="onItemPress">
+                <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onItemPress">
                     <cells>
-                        <Text text="{PurchaseRequisition}" /> 
-                        <Text text="{PurchaseRequisitionItemText}" /> 
-                        <Text text="{PurchasingGroup}" /> 
-                        <Button text="View" press="showDetailsInPopup"/>
+                        <Text id="_IDGenText4" text="{ID}" /> 
+                        <Text id="_IDGenText5" text="{VAT}" /> 
+                        <Text id="_IDGenText6" text="{BUKRS}" />
                     </cells>
                 </ColumnListItem>
             </items>

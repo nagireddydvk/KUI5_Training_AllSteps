@@ -16,7 +16,7 @@
         },
         "dataSources": {
             "POService": {
-                "uri": "/sap/opu/odata/sap/MM_PUR_POITEMS_MONI_SRV",
+                "uri": "/sap/opu/odata/sap/Z_SAMPLE_ODATA_SRV",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "2.0"
@@ -45,6 +45,7 @@
         ]
     },
     "sap.ui5": {
+        "flexEnabled": true,
         "rootView": {
             "viewName": "MyApp.view.App",
             "type": "XML"
@@ -64,17 +65,19 @@
                     "target": "home"
                 },
                 {
-                    "pattern": "PO/{PONumber}/Item/{itemNo}",
+                    "pattern": "PO/{PONumber}",
                     "name": "PurchaseOrder",
                     "target": "PO"
                 }                
             ],
             "targets": {
                 "home": {
-                    "viewName": "POs"
+                    "viewName": "POs",
+                    "viewId": "poList"
                 },
                 "PO": {
-                    "viewName": "PODetail"
+                    "viewName": "PODetail",
+                    "viewId": "poDetail"
                 }                
             }
         },     
