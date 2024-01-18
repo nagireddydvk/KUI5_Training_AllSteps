@@ -1,6 +1,5 @@
 # ui5-training
 
 ## OData Binding
-- Update the manifest.json with data source and model pointing to an OData service
-- In the routing have PO Number and Item number
-- 
+    - Create a PO
+    - Delete a PO
