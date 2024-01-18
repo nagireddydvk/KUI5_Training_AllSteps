@@ -37,6 +37,30 @@ sap.ui.define([
 
             oDialog.open();            
             oDialog.setBindingContext(oBindingContext);
-        }
+        },
+        onCreate: async function(){
+            //Create a dialog, showing the fragment poCreate.fragment.xml
+            if (!this.createDialog){
+                this.createDialog = await Fragment.load({
+                    "name": "MyApp.view.fragments.poCreate",
+                    "type": "XML"
+                });
+            }
+            this.getView().addDependent(this.createDialog);
+            this.createDialog.open();
+
+            //Create a binding context via createEntry and assign it to the dialog
+            const oModel = this.getView().getModel();
+            const oContext = oModel.createEntry("/PurchaseOrders");
+            this.createDialog.setBindingContext(oContext);
+        },
+        create: async function(){
+            //Create a new PO
+            const oModel = this.getView().getModel();
+            const oData = this.createDialog.getBindingContext().getProperty();
+            const oResponse = await oModel.create("/PurchaseOrders", oData);
+            console.log(oResponse);
+            this.createDialog.close();
+        }      
     });
 });
