@@ -90,7 +90,10 @@
         },
         "models": {
             "": {
-                "dataSource": "POService"
+                "dataSource": "POService",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
             },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",

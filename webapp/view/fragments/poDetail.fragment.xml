@@ -11,5 +11,5 @@
 				<Label text="{i18n>PurchasingGroup}" />
 				<Text text="{BUKRS}"/>
 			</f:content>
-		</f:SimpleForm>  
+		</f:SimpleForm>
 </core:FragmentDefinition>

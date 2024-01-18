@@ -1,16 +1,14 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
-		<f:SimpleForm
-			id="formId"
-			layout="ResponsiveGridLayout"
-			title="Demo" >
-			<f:content>
-				<Label text="{i18n>poNumber}" />
-				<Input text="{ID}" />
-				<Label text="{i18n>description}" />
-				<Input text="{VAT}" />
-				<Label text="{i18n>PurchasingGroup}" />
-				<Input text="{BUKRS}"/>
-			</f:content>
-		</f:SimpleForm> 
-		<Button text="Save" press="create"></Button> 
+			<f:SimpleForm
+				id="formId"
+				layout="ResponsiveGridLayout">
+				<f:content>
+					<Label text="{i18n>poNumber}" />
+					<Input value="{ID}" />
+					<Label text="{i18n>description}" />
+					<Input value="{VAT}" />
+					<Label text="{i18n>PurchasingGroup}" />
+					<Input value="{BUKRS}"/>
+				</f:content>
+			</f:SimpleForm>
 </core:FragmentDefinition>
