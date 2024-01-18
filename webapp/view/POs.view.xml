@@ -11,7 +11,7 @@
                 <OverflowToolbar id="_IDGenOverflowToolbar1">
                     <Title text="Purchase Orders" level="H2"/>
                     <ToolbarSpacer />
-                    <Button id="_IDGenButton1" text="New" press="onCreate"></Button>
+                    <Button id="_IDGenButton1" text="New" press="onCreate"/>
                 </OverflowToolbar>
             </headerToolbar>
             <columns>
@@ -24,6 +24,9 @@
                 <Column id="_IDGenColumn3">
                     <Text id="_IDGenText3" text="PurchasingGroup" />
                 </Column>
+                <Column>
+                    <Text text="Action" />
+                </Column>
             </columns>
             <items>
                 <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onItemPress">
@@ -31,6 +34,7 @@
                         <Text id="_IDGenText4" text="{ID}" /> 
                         <Text id="_IDGenText5" text="{VAT}" /> 
                         <Text id="_IDGenText6" text="{BUKRS}" />
+                        <Button id="_IDGenButton2" text="Delete" press="onDelete"/>
                     </cells>
                 </ColumnListItem>
             </items>

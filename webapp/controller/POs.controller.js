@@ -72,6 +72,15 @@ sap.ui.define([
             console.log(oResponse);
             this.createDialog.setBusy(false);
             this.createDialog.close();
-        }      
+        },
+        onDelete: async function(oEvent){
+            //Delete a PO
+            const oBindingContext = oEvent.getSource().getParent().getBindingContext();
+            const oModel = this.getView().getModel();
+            this.getView().setBusy(true);
+            const oResponse = await oModel.remove(oBindingContext.getPath());
+            this.getView().setBusy(false);
+            console.log(oResponse);
+        },   
     });
 });
