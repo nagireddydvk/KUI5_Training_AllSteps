@@ -95,21 +95,6 @@ sap.ui.define([
                 // Handle the error
                 MessageBox.error("Error removing item: "+ oError.message);
             }
-        },
-        onSave: async function(){
-            //Update PO
-            try {
-                this.getView().setBusy(true);
-                const oModel = this.getView().getModel();
-                if (oModel.hasPendingChanges()){
-                    const oResponse = await oModel.submitChanges();
-                    MessageToast.show("PO saved successfully");
-                }
-            } catch (oError) {
-                MessageBox.error("Error removing item: "+ oError.message);
-            } finally{
-                this.getView().setBusy(false);
-            }
         }
     });
 });
