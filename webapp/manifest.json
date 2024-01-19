@@ -48,6 +48,8 @@
         "flexEnabled": true,
         "rootView": {
             "viewName": "MyApp.view.App",
+            "async": true,
+            "id": "rootApp",
             "type": "XML"
         },
         "routing": {
@@ -56,7 +58,8 @@
                 "viewType": "XML",
                 "viewPath": "MyApp.view",
                 "controlId": "app",
-                "controlAggregation": "pages"
+                "controlAggregation": "pages",
+                "async": true
             },
             "routes": [
                 {
