@@ -23,7 +23,6 @@ sap.ui.define([
                     final: false
                 }
             }
-            }
         },
         formatter: util,
         onInit: function(){
