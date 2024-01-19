@@ -10,22 +10,22 @@ sap.ui.define([
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
         metadata: {
-            "methods" : {
-                "onItemPress": {
-                    "public": true, 
-                    "final": false
+            methods: {
+                onItemPress: {
+                    public: true,
+                    final: false
                 },
-                "onCreate": {
-                    "public": true, 
-                    "final": true
+                onCreate: {
+                    public: true,
+                    final: true
                 },
-                "create": {
-                    "public": false, 
-                    "final": true
+                create: {
+                    public: false,
+                    final: true
                 },
-                "onDelete": {
-                    "public": false, 
-                    "final": false
+                onDelete: {
+                    public: false,
+                    final: false
                 }
             }
         },
