@@ -2,8 +2,8 @@
 	<VBox id="_IDGenVBox1" >
 		<core:Fragment fragmentName="MyApp.view.fragments.poDetail" type="XML"/>
 		<HBox id="_IDGenHBox1">		
-			<Button id="_IDGenButton1" text="{i18n>gotoPO}" press=".gotoPO"/>	
-			<Button id="_IDGenButton2" text="Save" press="onSave"></Button>
+			<Button id="_IDGenButton1" text="{i18n>gotoPO}" class="sapUiTinyMargin" press=".gotoPO"/>	
+			<Button id="_IDGenButton2" text="Save" class="sapUiTinyMargin" press=".onSave"></Button>
 		</HBox>		
 	</VBox>
 </mvc:View>

@@ -7,9 +7,9 @@
 				<Label text="{i18n>poNumber}" />
 				<Text text="{ID}" />
 				<Label text="{i18n>description}" />
-				<Text text="{VAT}" />
+				<Input value="{VAT}" />
 				<Label text="{i18n>PurchasingGroup}" />
-				<Text text="{BUKRS}"/>
+				<Input value="{BUKRS}"/>
 			</f:content>
 		</f:SimpleForm>
 </core:FragmentDefinition>
