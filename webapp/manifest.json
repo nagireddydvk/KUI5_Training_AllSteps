@@ -45,6 +45,7 @@
         ]
     },
     "sap.ui5": {
+        "handleValidation": true,
         "flexEnabled": true,
         "rootView": {
             "viewName": "MyApp.view.App",
