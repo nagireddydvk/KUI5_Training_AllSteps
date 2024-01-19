@@ -9,6 +9,26 @@ sap.ui.define([
 ], function (Controller, util, Dialog, Fragment, Button, MessageBox, MessageToast) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
+        metadata: {
+            "methods" : {
+                "onItemPress": {
+                    "public": true, 
+                    "final": false
+                },
+                "onCreate": {
+                    "public": true, 
+                    "final": true
+                },
+                "create": {
+                    "public": false, 
+                    "final": true
+                },
+                "onDelete": {
+                    "public": false, 
+                    "final": false
+                }
+            }
+        },
         formatter: util,
         onItemPress: function(oEvent){
             //Get instance of the selected row
@@ -94,21 +114,6 @@ sap.ui.define([
                 this.getView().setBusy(false);
                 // Handle the error
                 MessageBox.error("Error removing item: "+ oError.message);
-            }
-        },
-        onSave: async function(){
-            //Update PO
-            try {
-                this.getView().setBusy(true);
-                const oModel = this.getView().getModel();
-                if (oModel.hasPendingChanges()){
-                    const oResponse = await oModel.submitChanges();
-                    MessageToast.show("PO saved successfully");
-                }
-            } catch (oError) {
-                MessageBox.error("Error removing item: "+ oError.message);
-            } finally{
-                this.getView().setBusy(false);
             }
         }
     });
