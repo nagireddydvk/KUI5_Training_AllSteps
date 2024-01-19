@@ -1,26 +1,26 @@
 <mvc:View xmlns:core="sap.ui.core" controllerName="MyApp.controller.MyController" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-    <VBox>
-		<f:SimpleForm
+    <VBox id="_IDGenVBox1">
+		<f:SimpleForm id="_IDGenSimpleForm1"
 			layout="ResponsiveGridLayout"
 			title="Demo" >
 			<f:content>
-				<Label text="{i18n>firstValue}" />
+				<Label id="_IDGenLabel1" text="{i18n>firstValue}" />
 				<Input id="value1" value="{/field1}" />
-				<Label text="{i18n>secondValue}" />
+				<Label id="_IDGenLabel2" text="{i18n>secondValue}" />
 				<Input id="value2" value="{/field2}" />
-				<Label text="Operator" />
-				<Select selectedKey="{/operator}" items="{/possibleOperations}" >
+				<Label id="_IDGenLabel3" text="Operator" />
+				<Select id="_IDGenSelect1" selectedKey="{/operator}" items="{/possibleOperations}" >
 					<items>
-						<core:Item key="{id}" text="{value}"/>
+						<core:Item id="_IDGenItem1" key="{id}" text="{value}"/>
 					</items>
 				</Select>				
-				<Label text="{i18n>answer}" />
-				<Text text="{/output}"/>
+				<Label id="_IDGenLabel4" text="{i18n>answer}" />
+				<Text id="_IDGenText1" text="{/output}"/>
 			</f:content>
 		</f:SimpleForm>
-		<HBox>
-			<Button text="{i18n>calculate}" press=".calculate"/>		
-			<Button text="{i18n>gotoPO}" press=".gotoPO"/>	
+		<HBox id="_IDGenHBox1">
+			<Button id="_IDGenButton1" text="{i18n>calculate}" press=".calculate"/>		
+			<Button id="_IDGenButton2" text="{i18n>gotoPO}" press=".gotoPO"/>	
 		</HBox>
 
     </VBox>

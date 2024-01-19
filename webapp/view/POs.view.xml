@@ -9,8 +9,8 @@
         <Table id="purchaseOrdersTable" items="{/POs}">
             <headerToolbar>
                 <OverflowToolbar id="_IDGenOverflowToolbar1">
-                    <Title text="Purchase Orders" level="H2"/>
-                    <ToolbarSpacer />
+                    <Title id="_IDGenTitle1" text="Purchase Orders" level="H2"/>
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                     <Button id="_IDGenButton1" text="New" press="onCreate"/>
                 </OverflowToolbar>
             </headerToolbar>
@@ -24,8 +24,8 @@
                 <Column id="_IDGenColumn3">
                     <Text id="_IDGenText3" text="PurchasingGroup" />
                 </Column>
-                <Column>
-                    <Text text="Action" />
+                <Column id="_IDGenColumn4">
+                    <Text id="_IDGenText7" text="Action" />
                 </Column>
             </columns>
             <items>

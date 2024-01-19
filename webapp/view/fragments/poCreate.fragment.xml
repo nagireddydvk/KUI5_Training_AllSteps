@@ -3,12 +3,12 @@
 				id="formId"
 				layout="ResponsiveGridLayout">
 				<f:content>
-					<Label text="{i18n>poNumber}" />
-					<Input value="{ID}" />
-					<Label text="{i18n>description}" />
-					<Input value="{VAT}" />
-					<Label text="{i18n>PurchasingGroup}" />
-					<Input value="{BUKRS}"/>
+					<Label id="labelId" text="{i18n>poNumber}" />
+					<Input id="_IDGenInput1" value="{ID}" />
+					<Label id="_IDGenLabel1" text="{i18n>description}" />
+					<Input id="_IDGenInput2" value="{VAT}" />
+					<Label id="_IDGenLabel2" text="{i18n>PurchasingGroup}" />
+					<Input id="_IDGenInput3" value="{BUKRS}"/>
 				</f:content>
 			</f:SimpleForm>
 </core:FragmentDefinition>
