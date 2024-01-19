@@ -4,8 +4,9 @@ sap.ui.define([
     "sap/m/Dialog",
     "sap/ui/core/Fragment",
     "sap/m/Button",
-    "sap/m/MessageBox"
-], function (Controller, util, Dialog, Fragment, Button, MessageBox) {
+    "sap/m/MessageBox",
+    "sap/m/MessageToast"
+], function (Controller, util, Dialog, Fragment, Button, MessageBox, MessageToast) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
         formatter: util,
@@ -74,6 +75,7 @@ sap.ui.define([
                 console.log(oResponse);
                 this.createDialog.setBusy(false);
                 this.createDialog.close();
+                MessageToast.show("PO created successfully");
             } catch (oError) {
                 this.createDialog.setBusy(false);
                 MessageBox.error("Error creating item: " + oError.message);
@@ -87,7 +89,7 @@ sap.ui.define([
                 this.getView().setBusy(true);
                 const oResponse = await oModel.remove(oBindingContext.getPath());
                 this.getView().setBusy(false);
-                console.log(oResponse);
+                MessageToast.show("PO deleted successfully");
             } catch (oError) {
                 this.getView().setBusy(false);
                 // Handle the error
@@ -101,6 +103,7 @@ sap.ui.define([
                 const oModel = this.getView().getModel();
                 if (oModel.hasPendingChanges()){
                     const oResponse = await oModel.submitChanges();
+                    MessageToast.show("PO saved successfully");
                 }
             } catch (oError) {
                 MessageBox.error("Error removing item: "+ oError.message);
