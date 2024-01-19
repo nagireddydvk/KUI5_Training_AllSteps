@@ -48,13 +48,16 @@
         "flexEnabled": true,
         "rootView": {
             "viewName": "MyApp.view.App",
-            "type": "XML"
+            "type": "XML",
+            "id": "rootView",
+            "async": true
         },
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
                 "viewPath": "MyApp.view",
+                "async": true,
                 "controlId": "app",
                 "controlAggregation": "pages"
             },
