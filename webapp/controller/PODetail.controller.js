@@ -4,6 +4,26 @@ sap.ui.define([
 ], function (Controller, util) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
+        metadata: {
+            "methods" : {
+                "onItemPress": {
+                    "public": true, 
+                    "final": false
+                },
+                "onCreate": {
+                    "public": true, 
+                    "final": true
+                },
+                "create": {
+                    "public": true, 
+                    "final": true
+                },
+                "onDelete": {
+                    "public": true, 
+                    "final": false
+                }
+            }
+        },
         formatter: util,
         onInit: function(){
             //router event
