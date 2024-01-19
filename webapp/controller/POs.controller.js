@@ -3,8 +3,9 @@ sap.ui.define([
     "MyApp/model/util",
     "sap/m/Dialog",
     "sap/ui/core/Fragment",
-    "sap/m/Button"
-], function (Controller, util, Dialog, Fragment, Button) {
+    "sap/m/Button",
+    "sap/m/MessageBox"
+], function (Controller, util, Dialog, Fragment, Button, MessageBox) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
         formatter: util,
@@ -65,22 +66,33 @@ sap.ui.define([
         },
         create: async function(){
             //Create a new PO
-            const oModel = this.getView().getModel();
-            this.createDialog.setBusy(true);
-            const oData = this.createDialog.getBindingContext().getProperty();
-            const oResponse = await oModel.create("/POs", oData);
-            console.log(oResponse);
-            this.createDialog.setBusy(false);
-            this.createDialog.close();
+            try {
+                const oModel = this.getView().getModel();
+                this.createDialog.setBusy(true);
+                const oData = this.createDialog.getBindingContext().getProperty();
+                const oResponse = await oModel.create("/POs", oData);
+                console.log(oResponse);
+                this.createDialog.setBusy(false);
+                this.createDialog.close();
+            } catch (oError) {
+                this.createDialog.setBusy(false);
+                MessageBox.error("Error creating item: " + oError.message);
+            }
         },
         onDelete: async function(oEvent){
             //Delete a PO
-            const oBindingContext = oEvent.getSource().getParent().getBindingContext();
-            const oModel = this.getView().getModel();
-            this.getView().setBusy(true);
-            const oResponse = await oModel.remove(oBindingContext.getPath());
-            this.getView().setBusy(false);
-            console.log(oResponse);
+            try {
+                const oBindingContext = oEvent.getSource().getParent().getBindingContext();
+                const oModel = this.getView().getModel();
+                this.getView().setBusy(true);
+                const oResponse = await oModel.remove(oBindingContext.getPath());
+                this.getView().setBusy(false);
+                console.log(oResponse);
+            } catch (oError) {
+                this.getView().setBusy(false);
+                // Handle the error
+                MessageBox.error("Error removing item: "+ oError.message);
+            }
         },   
     });
 });
