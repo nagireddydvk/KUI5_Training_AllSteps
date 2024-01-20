@@ -1,9 +1,11 @@
 # ui5-training
 
-## Enable form Validation
-    - Input type validation
+## Enable form Validation - UI
+    - Enable Input Validaton via manifest setting sap.ui5.hadnleValidation : true
+    - Use 'type' property of the Input to limit only numbers
+    - Input type validation, via binding and constraints
     - Mandatory validation
-## Server Error
-    - Show server errors from $batch response
-    - Show server error targeting a specific control
+    - Manually add a error message to a control
+    - 
+
   

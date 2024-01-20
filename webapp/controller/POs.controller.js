@@ -29,7 +29,7 @@ sap.ui.define([
                 }
             }
         },
-        formatter: util,
+        formatter: util,     
         onItemPress: function(oEvent){
             //Get instance of the selected row
             const source = oEvent.getSource();
@@ -93,12 +93,12 @@ sap.ui.define([
                 const oData = this.createDialog.getBindingContext().getProperty();
                 const oResponse = await oModel.create("/POs", oData);
                 console.log(oResponse);
-                this.createDialog.setBusy(false);
                 this.createDialog.close();
                 MessageToast.show("PO created successfully");
-            } catch (oError) {
-                this.createDialog.setBusy(false);
+            } catch (oError) {                
                 MessageBox.error("Error creating item: " + oError.message);
+            } finally{
+                this.createDialog.setBusy(false);
             }
         },
         onDelete: async function(oEvent){
