@@ -89,7 +89,6 @@ sap.ui.define([
             //Ensure that there are no errors in the dialog from message manager
             const oMessageManager = sap.ui.getCore().getMessageManager();
             const oMessageModel = oMessageManager.getMessageModel();
-            var oMessageProcessor = new sap.ui.core.message.ControlMessageProcessor();
 
             const aMessages = oMessageModel.getData();
             if (aMessages.length > 0){
@@ -114,14 +113,20 @@ sap.ui.define([
                 const oModel = this.getView().getModel();
                 this.createDialog.setBusy(true);
                 const oData = this.createDialog.getBindingContext().getProperty();
-                const oResponse = await oModel.create("/POs", oData);
-                console.log(oResponse);
+                const oResponse = await oModel.create("/POs", oData, {
+                    success: function(oData, oResponse){
+                        MessageToast.show("PO created successfully");
+                    },
+                    error: function(oError){
+                        MessageBox.error("Error creating item: " + oError.message);
+                    }
+                }); 
                 this.createDialog.close();
-                MessageToast.show("PO created successfully");
-            } catch (oError) {                
+                this.createDialog.setBusy(false);              
+                
+            } catch (oError) {            
+                this.createDialog.close();    
                 MessageBox.error("Error creating item: " + oError.message);
-            } finally{
-                this.createDialog.setBusy(false);
             }
         },
         onDelete: async function(oEvent){
