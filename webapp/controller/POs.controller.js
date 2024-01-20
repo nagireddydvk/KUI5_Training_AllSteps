@@ -86,6 +86,15 @@ sap.ui.define([
             this.createDialog.setBindingContext(oContext);
         },
         create: async function(){
+            //Ensure that there are no errors in the dialog from message manager
+            const oMessageManager = sap.ui.getCore().getMessageManager();
+            const oMessageModel = oMessageManager.getMessageModel();
+            const aMessages = oMessageModel.getData();
+            if (aMessages.length > 0){
+                MessageBox.error("Please fix the errors in the dialog");
+                return;
+            }
+
             //Create a new PO
             try {
                 const oModel = this.getView().getModel();
