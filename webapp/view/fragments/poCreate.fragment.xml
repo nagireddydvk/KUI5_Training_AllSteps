@@ -19,7 +19,7 @@
 														path: 'BUKRS',
 														type: 'sap.ui.model.type.String',
 														constraints: {
-															minLength: 5,
+															minLength: 1,
 															maxLength: 10
 														}
           											}"

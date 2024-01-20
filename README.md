@@ -5,7 +5,5 @@
     - Use 'type' property of the Input to limit only numbers
     - Input type validation, via binding and constraints
     - Mandatory validation
-    - Manually add a error message to a control
-    - 
 
   

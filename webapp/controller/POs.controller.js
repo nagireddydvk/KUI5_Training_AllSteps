@@ -64,7 +64,7 @@ sap.ui.define([
         onCreate: async function(){
             //Create a dialog, showing the fragment poCreate.fragment.xml
             if (!this.createDialog){
-                let dialogContent = await Fragment.load({
+                let dialogContent = await this.loadFragment({
                     "name": "MyApp.view.fragments.poCreate",
                     "type": "XML"
                 });
@@ -89,10 +89,24 @@ sap.ui.define([
             //Ensure that there are no errors in the dialog from message manager
             const oMessageManager = sap.ui.getCore().getMessageManager();
             const oMessageModel = oMessageManager.getMessageModel();
+            var oMessageProcessor = new sap.ui.core.message.ControlMessageProcessor();
+
             const aMessages = oMessageModel.getData();
             if (aMessages.length > 0){
                 MessageBox.error("Please fix the errors in the dialog");
                 return;
+            }
+
+            //Mandatory validation
+            const pg = this.getView().byId("_IDGenInput3");
+            const value = pg.getValue();
+            if (value == ""){
+                pg.setValueState("Error") ;
+                pg.setValueStateText("Mandatory");
+                return;              
+            }else {
+                pg.setValueState();
+                pg.setValueStateText();                
             }
 
             //Create a new PO
