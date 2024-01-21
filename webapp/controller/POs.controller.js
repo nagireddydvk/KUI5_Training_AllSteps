@@ -113,12 +113,13 @@ sap.ui.define([
                 const oModel = this.getView().getModel();
                 this.createDialog.setBusy(true);
                 const oData = this.createDialog.getBindingContext().getProperty();
-                const oResponse = await oModel.create("/POs", oData, {
+                await oModel.create("/POs", oData, {
                     success: function(oData, oResponse){
                         MessageToast.show("PO created successfully");
                     },
                     error: function(oError){
-                        MessageBox.error("Error creating item: " + oError.message);
+                        const sError = JSON.parse(oError.responseText).error.message.value;
+                        MessageBox.error("Error creating item: " + sError);
                     }
                 }); 
                 this.createDialog.close();
