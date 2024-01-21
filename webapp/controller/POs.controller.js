@@ -5,27 +5,32 @@ sap.ui.define([
     "sap/ui/core/Fragment",
     "sap/m/Button",
     "sap/m/MessageBox",
-    "sap/m/MessageToast"
-], function (Controller, util, Dialog, Fragment, Button, MessageBox, MessageToast) {
+    "sap/m/MessageToast",
+    "sap/ui/core/mvc/OverrideExecution",
+], function (Controller, util, Dialog, Fragment, Button, MessageBox, MessageToast, OverrideExecution) {
     "use strict";
     return Controller.extend("MyApp.controller.POs", {
         metadata: {
             methods: {
                 onItemPress: {
-                    public: true,
-                    final: false
+                    public: false,
+                    final: false,
+                    overrideExecution: OverrideExecution.Instead
                 },
                 onCreate: {
                     public: true,
-                    final: true
+                    final: true,
+                    overrideExecution: OverrideExecution.Instead
                 },
                 create: {
                     public: false,
-                    final: true
+                    final: true,
+                    overrideExecution: OverrideExecution.Before
                 },
                 onDelete: {
-                    public: false,
-                    final: false
+                    public: true,
+                    final: false,
+                    overrideExecution: OverrideExecution.Before                    
                 }
             }
         },

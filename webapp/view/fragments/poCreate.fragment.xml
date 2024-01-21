@@ -3,18 +3,20 @@
 				id="formId"
 				layout="ResponsiveGridLayout">
 				<f:content>
-					<Label id="labelId" text="{i18n>poNumber}" />
+					<Label id="labelId" text="{i18n>poNumber}-Only Number" />
 					<Input id="_IDGenInput1" value="{ID}" type="Number" />
-					<Label id="_IDGenLabel1" text="{i18n>description}" />
-					<Input id="_IDGenInput4" value="{
-														path: 'VAT',
+					<Label id="_IDGenLabel1" text="{i18n>Amount}" />
+					<Input id="_IDGenInput4" value="{	path: 'AMOUNT_FL',
 														type: 'sap.ui.model.type.Float',
 														constraints: {
 															maximum: 123.99
 														}
           											}"
 					/>	
-					<Label id="_IDGenLabel2" text="{i18n>PurchasingGroup}"/>
+					<Label id="_IDGenLabel6" text="{i18n>VAT}" />
+					<Input id="_IDGenInput5" value="{VAT}"
+					/>						
+					<Label id="_IDGenLabel2" required="true" text="{i18n>Max10Chars} - Mandatory"/>
 					<Input id="_IDGenInput3" value="{
 														path: 'BUKRS',
 														type: 'sap.ui.model.type.String',
