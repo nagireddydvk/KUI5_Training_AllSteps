@@ -29,6 +29,18 @@ sap.ui.define([
                 }
             }
         },
+        onInit: function () {
+            alert("onInit of base application");
+        },
+        onBeforeRendering: function () {
+            alert("onBeforeRendering of base application");
+        },
+        onAfterRendering: function () {
+            alert("onAfterRendering of base application");
+        },
+        onExit: function () {
+            alert("onExit of base application");
+        },        
         formatter: util,     
         onItemPress: function(oEvent){
             //Get instance of the selected row
