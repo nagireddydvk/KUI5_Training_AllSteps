@@ -133,14 +133,15 @@ sap.ui.define([
                 await oModel.create("/POs", oData, {
                     success: function(oData, oResponse){
                         MessageToast.show("PO created successfully");
+                        this.createDialog.close();
+                        this.createDialog.setBusy(false);     
                     },
                     error: function(oError){
                         const sError = JSON.parse(oError.responseText).error.message.value;
                         MessageBox.error("Error creating item: " + sError);
+                        this.createDialog.setBusy(false);     
                     }
-                }); 
-                this.createDialog.close();
-                this.createDialog.setBusy(false);              
+                });        
                 
             } catch (oError) {            
                 this.createDialog.close();    
